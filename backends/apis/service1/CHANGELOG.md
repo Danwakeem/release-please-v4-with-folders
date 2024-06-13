@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/Danwakeem/release-please-v4-with-folders/compare/svc-1@v1.2.0...svc-1@v1.2.1) (2024-06-13)
+
+
+### Bug Fixes
+
+* Release config ([60a0cae](https://github.com/Danwakeem/release-please-v4-with-folders/commit/60a0cae903fe566ce12603d4e7c993c64f9ef961))
+
 ## [1.2.0](https://github.com/Danwakeem/release-please-v4-with-folders/compare/svc-1-v1.1.1...svc-1@v1.2.0) (2024-06-13)
 
 
