@@ -1,0 +1,62 @@
+name: Service2 Deploy
+
+permissions:
+  id-token: write
+  contents: write
+  pull-requests: write
+  packages: read
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "backends/apis/service2/**"
+      - ".github/workflows/service2.yml"
+  workflow_dispatch:
+    inputs:
+      stage:
+        description: 'Stage to deploy to - for example, "dev" or "prod"'
+        required: true
+        default: 'dev'
+jobs:
+  lower-env-deploy:
+    concurrency:
+      group: svc2-lower-env-deploy
+      cancel-in-progress: true
+    name: Deploy Lower Environment
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fake deploy
+        run: echo "HI MOM"
+  release-please:
+    name: Release Please
+    needs:
+      - lower-env-deploy
+    concurrency:
+      group: svc2-release-please
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    outputs:
+      release-created: ${{ steps.release.outputs.service2--release_created }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: googleapis/release-please-action@v4
+        id: release
+        with:
+          config-file: backend/apis/service2/release-please-config.json
+      - name: Echo JSON Output
+        run: echo '${{ toJson(steps.release.outputs) }}'
+  prod-deploy:
+    needs:
+      - release-please
+    if: ${{ needs.release-please.outputs.release-created }}
+    concurrency:
+      group: svc2-prod-deploy
+      cancel-in-progress: true
+    environment: prod
+    name: Deploy Prod
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fake deploy
+        run: echo "HI MOM"
