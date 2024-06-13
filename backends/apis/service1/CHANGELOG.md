@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0](https://github.com/Danwakeem/release-please-v4-with-folders/compare/svc-1-v1.1.1...svc-1@v1.2.0) (2024-06-13)
+
+
+### Features
+
+* First commit ([2385025](https://github.com/Danwakeem/release-please-v4-with-folders/commit/2385025354886503c31aab0f55addf96a9ed9fc3))
+* Updated thing ([525551e](https://github.com/Danwakeem/release-please-v4-with-folders/commit/525551e33fda1df49645ac6f4439c208559f3744))
+
+
+### Bug Fixes
+
+* Release please config ([90a766d](https://github.com/Danwakeem/release-please-v4-with-folders/commit/90a766de0104bda94b9e168a96566f46ae01e095))
+
 ## [1.1.1](https://github.com/Danwakeem/release-please-v4-demo/compare/svc-1@v1.1.0...svc-1@v1.1.1) (2024-05-23)
 
 
