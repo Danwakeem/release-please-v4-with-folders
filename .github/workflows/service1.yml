@@ -37,7 +37,7 @@ jobs:
       cancel-in-progress: true
     runs-on: ubuntu-latest
     outputs:
-      release-created: ${{ steps.release.outputs.service1--release_created }}
+      release-created: ${{ steps.release.outputs["backends/apis/service1--release_created"] }}
     steps:
       - uses: actions/checkout@v4
       - uses: googleapis/release-please-action@v4
