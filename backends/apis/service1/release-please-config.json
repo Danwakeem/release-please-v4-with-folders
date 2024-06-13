@@ -4,7 +4,7 @@
   "release-type": "node",
   "separate-pull-requests": true,
   "packages": {
-    "backend/apis/service1": {
+    "backends/apis/service1": {
       "package-name": "svc-1"
     }
   }

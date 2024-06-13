@@ -1,4 +1,4 @@
 {
-  "backend/apis/service1": "1.1.1",
-  "backend/apis/service2": "1.1.1"
+  "backends/apis/service1": "1.1.1",
+  "backends/apis/service2": "1.1.1"
 }
